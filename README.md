@@ -1,6 +1,6 @@
 # Standalone Twig Template boilerplate
 
-Simple standalone boilerplate for developing Latte templates without NETTE. 
+Simple standalone boilerplate for developing Twig templates. 
 
 ## Features
 
