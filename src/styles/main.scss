@@ -1,0 +1,23 @@
+
+@import "base/fonts";
+
+// foundation
+@import "foundation/settings";
+@import "foundation/foundation";
+// init foundation
+@include foundation-custom();
+
+$space: 20px;
+$hero-spacing:$space * 2;
+$page-spacing:$space * 2;
+
+@import "base/helpers";
+//@import "base/typekit";
+//@import "base/spacing";
+//@import "base/typo";
+//@import "base/layouts";
+
+@import "dev";
+
+//show screen size helper
+@include mediaDebug();

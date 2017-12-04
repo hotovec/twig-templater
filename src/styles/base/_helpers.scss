@@ -1,0 +1,42 @@
+@mixin mediaDebug() {
+    body {
+        &:before {
+            z-index: 100;
+            display: block;
+            position: fixed;
+            content: "BP";
+            top: 100px;
+            left: 0px;
+            padding: 20px;
+            background-color: darkgray;
+            color: white;
+            font-size: 16px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+        }
+        @include breakpoint(small) {
+            &:before {
+                background-color: red;
+                content: "S";
+            }
+        }
+        @include breakpoint(medium) {
+            &:before {
+                background-color: green;
+                content: "M";
+            }
+        }
+        @include breakpoint(large) {
+            &:before {
+                background-color: blue;
+                content: "L";
+            }
+        }
+        @include breakpoint(xlarge) {
+            &:before {
+                background-color: violet;
+                content: "XL";
+            }
+        }
+    }
+}

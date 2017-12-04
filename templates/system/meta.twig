@@ -1,0 +1,31 @@
+<meta name="author" content="Michal Hotovec">
+<meta name="keywords" content="{$meta_keywords}">
+
+{# twitter #}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="@mhotovec" />
+
+{# společné Open Graph tagy pro FB a Twitter #}
+
+{#
+
+<meta property="og:url" content="{$meta_url}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{$ecord.title}">
+
+{% if record.teaser %}
+<meta name="description" content="">
+<meta property="og:description" content="" />
+{% else %}
+<meta name="description" content="Designer & frontend developer. I'am focused on UI/UX, typography, responsive design and publishing platforms. From time to time I create my worlds in Unity 3D and Augmented Reality apps.">
+<meta property="og:description" content="Designer & frontend developer. I'am focused on UI/UX, typography, responsive design and publishing platforms. From time to time I create my worlds in Unity 3D and Augmented Reality apps." />
+{% endif %}
+
+
+{% if record.image %}
+<meta property="og:image" content="{{ url('homepage') }}/files/{{ record.image }}" />
+{% else %}
+<meta property="og:image" content="http://www.michalhotovec.com/assets/img/michal-hotovec.png" />
+{% endif %}
+#}

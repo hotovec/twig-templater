@@ -1,0 +1,17 @@
+{
+  "name": "hotovec/twig-templater",
+  "description": "Simple Twig engine implementations for building templates",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Michal Hotovec",
+      "email": "michal.hotovec@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/yaml": "v3.3.10",
+    "twig/twig": "^1.35",
+    "twig/extensions": "^1.5"
+  }
+}

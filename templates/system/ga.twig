@@ -1,0 +1,35 @@
+<div class="ga-notice is-hidden">
+    This site is using cookies<a href="#" class="button">Ok</a>
+</div>
+<script n:syntax="off">
+  $(document).ready(function () {
+    var gaNotice = $('.ga-notice');
+    var localCookie = Cookies.getJSON('michalhotovec');
+    var scrollCount = 0;
+    if (localCookie && localCookie.cookieapproved === 1) {
+      console.log('ca');
+
+    } else {
+      gaNotice.removeClass('is-hidden');
+      $(document).bind('scroll', function () {
+        scrollCount++;
+        if (scrollCount > 3) {
+          Cookies.set('michalhotovec', {cookieapproved: 1}, {expires: 360});
+          $(document).unbind('scroll');
+          gaNotice.addClass('is-hidden');
+        }
+      });
+    }
+    gaNotice.on('click', function (e) {
+      $(e.currentTarget).addClass('is-hidden');
+    })
+  });
+</script>
+<script n:syntax="off">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '--------', 'auto');
+  ga('send', 'pageview');
+</script>

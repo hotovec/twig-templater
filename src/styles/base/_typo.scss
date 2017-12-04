@@ -1,0 +1,55 @@
+@mixin customUnderline($cc-color-accent: red, $cc-color-hover: blue, $color-text-body: #333333, $text-bg-color: #ffffff, $color-selection: rgba(176,214,253, 0.8) ) {
+    a {
+        color: $cc-color-accent;
+        text-decoration: none;
+
+        // Underline via gradient background
+        //@include linear-gradient(to bottom, transparent 49%, $color-accent 50%);
+
+        background: linear-gradient(to bottom, transparent 49%, $cc-color-accent 50%);
+
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+
+        // For non-retina screens in Safari, gradient background needs 2 pixels of height to show any underline
+        @media (-webkit-max-device-pixel-ratio: 1.49),
+        (max-resolution: 143dpi) {
+            background-size: 1px 2px;
+        }
+        background-position: 0 90%; // double check firefox when changing this value
+
+        &,
+        > * {
+            &::selection {
+                background-color: $color-selection;
+                text-shadow: none;
+            }
+            &::-moz-selection {
+                background-color: $color-selection;
+                text-shadow: none;
+            }
+        }
+
+        &:hover {
+            color: $cc-color-hover;
+            background: linear-gradient(to bottom, transparent 49%, $cc-color-hover 50%);
+            background-repeat: repeat-x;
+            background-size: 2px 2px;
+            background-position: 0 90%; // double check firefox when changing this value
+            @media (-webkit-max-device-pixel-ratio: 1.49),
+            (max-resolution: 143dpi) {
+                background-size: 1px 2px;
+            }
+        }
+
+        // Clear descendors from underline
+        text-shadow: -2px 0 $text-bg-color, -1px 0 $text-bg-color, 1px 0 $text-bg-color, 2px 0 $text-bg-color;
+
+    }
+    h1, h2, h3, h4, h5, dt, strong, b {
+        a {
+            background-size: 2px 2px;
+            background-position: 0 89%;
+        }
+    }
+}

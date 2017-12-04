@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block page_title %}Latte Tester{% endblock %}</title>
+
+    <link rel="stylesheet" href="/assets/dist/css/main.css">
+    {% include "/system/favicon.twig" %}
+    {% include "/system/typekit.twig" %}
+    {% include "/system/meta.twig" %}
+</head>
+
+<body class="{% block bodyClass %}{% endblock %}">
+<div class="m-page">
+
+    {% block pagecontent %}default page content{% endblock %}
+
+</div>
+<script src="/assets/dist/js/lib.js"></script>
+<script src="/assets/dist/js/bundle.js"></script>
+{% include "/system/ga.twig" %}
+</body>
+</html>

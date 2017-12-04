@@ -1,0 +1,18 @@
+
+/* fout */
+
+.wf-loading {
+    body {
+        visibility: hidden;
+    }
+}
+
+.wf-cached.wf-loading {
+    body { visibility: visible; }
+}
+
+.wf-active {
+    body {
+        visibility: visible;
+    }
+}

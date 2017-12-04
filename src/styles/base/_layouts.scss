@@ -1,0 +1,46 @@
+
+.l-full {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.l-wide {
+    width: 96%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.l-wide-collapse {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include breakpoint(large) {
+        width: 96%;
+    }
+}
+
+.l-medium {
+    //width: 75%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.l-narrow {
+    width: 94%;
+    max-width: 920px;
+    margin: 0 auto;
+    @include breakpoint(large) {
+        width: 75%;
+    }
+}
+
+.mm-expand {
+    width: 100%;
+}
+
+.l-tiny {
+    width: 75%;
+    max-width: 680px;
+    margin: 0 auto;
+}
